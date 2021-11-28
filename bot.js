@@ -9,9 +9,9 @@ import promptSync from 'prompt-sync';
 const prompt = promptSync();
 
 //creating embed to store final result
-const newEmbed = new MessageEmbed();
+// const newEmbed = new MessageEmbed();
 
-newEmbed.setTitle('Codeforces submission count of last seven days.');
+// newEmbed.setTitle('Codeforces submission count of last seven days.');
 
 client.on('ready', () => {
   console.log(`Logged in as ${client.user.tag}!`);
@@ -41,6 +41,10 @@ client.on('interactionCreate', async interaction => {
     await interaction.reply('Hello Friends!!\n You are talking to Ketchup.')
   }
   else if(interaction.commandName==='count'){
+
+    const newEmbed = new MessageEmbed();
+
+    newEmbed.setTitle('Codeforces submission count of last seven days.');
 
     for(var j=0; j<codeforcesAccounts.length; j++)
     {
